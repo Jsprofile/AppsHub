@@ -1,6 +1,5 @@
 const express = require('express')
 const hubFunction = require('./PossiveisMesclados')
-// const firstPage = require('./')
 
 const router = express.Router()
 
@@ -10,7 +9,7 @@ router.get('/', function(req, res){
 
 router.get('/excEmp', function(req, res){
     hubFunction.PossiveisMesclados()
-    res.sendFile(__dirname + "/exec.html")
+    res.send(__dirname + "/exec.html")
 })
 
 module.exports = router
