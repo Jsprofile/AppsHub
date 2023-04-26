@@ -8,6 +8,9 @@ router.get('/', function(req, res){
     res.sendFile(__dirname + "/index.html")
 })
 
-router.get('/excEmp', hubFunction.ExcluiEmpresas)
+router.get('/excEmp', (req, res)=>{
+    hubFunction.ExcluiEmpresas
+    res.sendFile(__dirname + "/exec.html")
+})
 
 module.exports = router
