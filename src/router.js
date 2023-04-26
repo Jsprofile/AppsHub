@@ -8,7 +8,7 @@ router.get('/', function(req, res){
     res.sendFile(__dirname + "/index.html")
 })
 
-router.get('/excEmp', (req, res)=>{
+router.get('/excEmp', function(req, res){
     hubFunction.PossiveisMesclados()
     res.sendFile(__dirname + "/exec.html")
 })
