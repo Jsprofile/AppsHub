@@ -1,4 +1,4 @@
-const ExcluiEmpresas = async () => {
+const PossiveisMesclados = async () => {
     console.log('hubFunction')
 
     const hubspot = require('@hubspot/api-client');
@@ -9,17 +9,17 @@ const ExcluiEmpresas = async () => {
     });
 
     const properties = {
-      "city": "Cambridge",
-      "domain": "biglytics.net",
-      "industry": "Technology",
-      "name": "Biglytics Teste 5",
+      "company": "Biglytics",
+      "email": "bcooper@biglytics.net",
+      "firstname": "Bryan 1",
+      "lastname": "Cooper",
       "phone": "(877) 929-0687",
-      "state": "Massachusetts"
+      "website": "biglytics.net"
     };
-    const SimplePublicObjectInputForCreate = { properties, associations: [{"to":{"id":"101"},"types":[{"associationCategory":"HUBSPOT_DEFINED","associationTypeId":2}]}] };
+    const SimplePublicObjectInputForCreate = { properties, associations: [] };
     
     try {
-      const apiResponse = await hubspotClient.crm.companies.basicApi.create(SimplePublicObjectInputForCreate);
+      const apiResponse = await hubspotClient.crm.contacts.basicApi.create(SimplePublicObjectInputForCreate);
       console.log(JSON.stringify(apiResponse, null, 2));
     } catch (e) {
       e.message === 'HTTP request failed'
@@ -33,5 +33,5 @@ const ExcluiEmpresas = async () => {
 
 
 module.exports = {
-    ExcluiEmpresas
+  PossiveisMesclados
 }

@@ -9,7 +9,7 @@ router.get('/', function(req, res){
 })
 
 router.get('/excEmp', (req, res)=>{
-    hubFunction.ExcluiEmpresas
+    hubFunction.PossiveisMesclados()
     res.sendFile(__dirname + "/exec.html")
 })
 
