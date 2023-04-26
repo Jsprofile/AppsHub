@@ -12,7 +12,7 @@ const ExcluiEmpresas = async () => {
       "city": "Cambridge",
       "domain": "biglytics.net",
       "industry": "Technology",
-      "name": "Biglytics Teste 1",
+      "name": "Biglytics Teste 2",
       "phone": "(877) 929-0687",
       "state": "Massachusetts"
     };
