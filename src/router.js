@@ -9,7 +9,7 @@ router.get('/', function(req, res){
 
 router.get('/excEmp', function(req, res){
     hubFunction.PossiveisMesclados()
-    res.send(__dirname + "/exec.html")
+    res.send("/exec.html")
 })
 
 module.exports = router
