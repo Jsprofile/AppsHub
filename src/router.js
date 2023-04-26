@@ -4,12 +4,12 @@ const hubFunction = require('./PossiveisMesclados')
 const router = express.Router()
 
 router.get('/', function(req, res){
-    res.sendFile(__dirname + "/index.html")
+    res.send("html")
 })
 
 router.get('/excEmp', function(req, res){
     hubFunction.PossiveisMesclados()
-    res.send("/exec.html")
+    res.send("exec")
 })
 
 module.exports = router
