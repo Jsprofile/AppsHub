@@ -8,24 +8,25 @@ const PossiveisMesclados = async () => {
         portalId: process.env.PORTAL_ID
     });
 
-    // const properties = {
-    //   "company": "Biglytics",
-    //   "email": "bcooper@biglytics.net",
-    //   "firstname": "Bryan 1",
-    //   "lastname": "Cooper",
-    //   "phone": "(877) 929-0687",
-    //   "website": "biglytics.net"
-    // };
-    // const SimplePublicObjectInputForCreate = { properties, associations: [] };
+    const limit = 10;
+    const after = undefined;
+    const properties = [
+      "name",
+      "phone",
+      "e_duplicado_"
+    ];
+    const propertiesWithHistory = undefined;
+    const associations = undefined;
+    const archived = false;
     
-    // try {
-    //   const apiResponse = await hubspotClient.crm.contacts.basicApi.create(SimplePublicObjectInputForCreate);
-    //   console.log(JSON.stringify(apiResponse, null, 2));
-    // } catch (e) {
-    //   e.message === 'HTTP request failed'
-    //     ? console.error(JSON.stringify(e.response, null, 2))
-    //     : console.error(e)
-    // }
+    try {
+      const apiResponse = await hubspotClient.crm.contacts.basicApi.getPage(limit, after, properties, propertiesWithHistory, associations, archived);
+      console.log(JSON.stringify(apiResponse, null, 2));
+    } catch (e) {
+      e.message === 'HTTP request failed'
+        ? console.error(JSON.stringify(e.response, null, 2))
+        : console.error(e)
+    }
 
     console.log('FOI CARALHO')
 
